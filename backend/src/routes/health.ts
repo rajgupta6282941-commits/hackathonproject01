@@ -5,7 +5,7 @@ const healthRouter = Router();
 
 healthRouter.get('/health', (_request, response) => {
   const databaseConnected = mongoose.connection.readyState === 1;
-  response.status(databaseConnected ? 200 : 503).json({
+  response.status(200).json({
     status: databaseConnected ? 'ok' : 'degraded',
     service: 'vikral-api',
     database: databaseConnected ? 'connected' : 'disconnected',
