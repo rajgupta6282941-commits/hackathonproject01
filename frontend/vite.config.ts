@@ -10,7 +10,8 @@ export default defineConfig(({ mode }) => {
     server: {
       host: '0.0.0.0',
       port: 5173,
-      strictPort: true,
+      // Prefer 5173, but choose the next free port when another dev server is running.
+      strictPort: false,
       // Required when sharing the development UI through a temporary ngrok hostname.
       allowedHosts: true,
       proxy: {
